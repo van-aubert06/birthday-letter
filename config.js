@@ -5,8 +5,8 @@ window.BIRTHDAY = {
   sender: "FR",
   age: 23,
   music: {
-    src: "assets/audio/untukmu.mp3",
-    title: "Untukmu · instrumental",
+    src: "assets/audio/musics.mp3",
+    title: "Hampstead - Ariana Grande",
     volume: 0.9,
     autoplay: true,
     loop: true
