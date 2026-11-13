@@ -1,0 +1,79 @@
+/* Liquid glass, a bound scrapbook, and the two final surprises. */
+.password-gate { isolation: isolate; background: #f0e1e8; }
+.glass-scene { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; background: radial-gradient(ellipse at 10% 15%, #fff8ed, transparent 55%), linear-gradient(135deg, #ecdee4, #dccae6 55%, #eccdd7); }
+.glass-orb { position: absolute; border-radius: 50%; box-shadow: inset -28px -30px 60px #9e526d20, inset 20px 18px 48px #fff9; animation: glassFloat 14s ease-in-out infinite alternate; }
+.orb-rose { width: min(56vw, 700px); aspect-ratio: 1; left: 3%; top: 2%; background: radial-gradient(circle at 27% 23%, #fff1ed, #e8a6be 55%, #bd98c3); }
+.orb-pearl { width: min(36vw, 460px); aspect-ratio: 1; right: 3%; bottom: -9%; background: radial-gradient(circle at 30% 24%, #fffdf3, #f9d3b7 55%, #d5a7bd); animation-delay: -8s; }
+.orb-lilac { width: min(24vw, 300px); aspect-ratio: 1; right: 15%; top: 3%; background: radial-gradient(circle at 30% 23%, #fdf9ff, #c0b3d9 57%, #a591c0); animation-delay: -4s; }
+.glass-ribbon { position: absolute; width: 105vw; height: 45vh; left: -18%; bottom: -2%; border: 38px solid #fff6; border-radius: 50%; transform: rotate(-24deg); box-shadow: inset 2px 5px 7px #fff9, 1px 5px 24px #765d8b20; }
+.glass-heart { position: absolute; font: 200px Georgia, serif; color: #ffffff60; text-shadow: 1px 2px 2px #fff8, 0 12px 20px #9e789322; transform: rotate(-18deg); }
+.heart-one { left: 10%; bottom: 1%; }.heart-two { right: 8%; top: 20%; font-size: 125px; transform: rotate(18deg); }
+.gate-card { --shine-x: 24%; --shine-y: 0%; padding: 44px 39px 31px; border-radius: 35px; border: 1px solid #ffffffe0; background: radial-gradient(circle at var(--shine-x) var(--shine-y), #ffffff91, transparent 63%), linear-gradient(135deg, #fff6, #fff2 50%, #fff5); -webkit-backdrop-filter: blur(24px) saturate(1.4); backdrop-filter: blur(24px) saturate(1.4); box-shadow: 0 32px 90px #57436927, 0 8px 24px #76608712, inset 1px 1px 2px #fff, inset -1px -1px 3px #fff9; }
+.gate-card::before { content: ""; position: absolute; inset: 5px; border-radius: 30px; border: 1px solid #ffffff52; pointer-events: none; }
+.gate-card .eyebrow { color: #74617f; }.gate-card h1 { color: #4d3656; }.gate-card h1 em { color: #885872; }
+.gate-copy, .gate-message { color: #71586c; }.gate-sign { color: #8e657f; }
+.gate-seal { border: 1px solid #fff9; border-radius: 22px; background: linear-gradient(135deg, #fffc, #c994b478); box-shadow: 0 9px 20px #92758c26, inset 1px 1px 2px white, inset -1px -1px 4px #fff8; transform: rotate(-7deg); }
+.gate-seal svg { fill: #9f6788; transform: rotate(7deg); }
+.password-field input { border-radius: 16px; border: 1px solid #ffffffcf; background: #fff5; box-shadow: inset 0 2px 5px #6d45710d, 0 1px 1px #fff9; }
+.password-field input::placeholder { color: #796178; }.password-eye { color: #705272; }
+.gate-submit { border-radius: 16px; border: 1px solid #ffffff8c; background: linear-gradient(135deg, #ad789fd9, #7e5a90ed); box-shadow: 0 10px 22px #77528025, inset 0 1px 1px #fff8; }
+.gate-message.is-error { color: #8b274a; }
+@keyframes glassFloat { to { transform: translate(16px, 22px) rotate(8deg); } }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { .gate-card { background: #f4eaf2ed; } }
+
+/* Scrapbook: staggered glass photo cards, one photo per card. */
+.scrapbook-section { background: linear-gradient(180deg, transparent, #f5d8de88 9%, #f2d0d8aa 90%, transparent); padding-bottom: 65px; }
+.scrapbook-section .section-heading { margin-bottom: 45px; }
+.memory-grid { --stagger: 56px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 40px; max-width: 1180px; margin: 0 auto; padding-bottom: var(--stagger); }
+.memory-card { position: relative; top: 0; min-width: 0; padding: 16px 16px 0; border: 1px solid #fffc; border-radius: 44px; background: radial-gradient(circle at 12% 0, #ffffffa0, transparent 55%), linear-gradient(150deg, #f8e3e7, #f1d0d9); box-shadow: 0 24px 55px #b4658126, 0 4px 12px #b4658112, inset 1px 1px 2px #fff, inset -1px -2px 4px #ffffff77; transition: transform .3s, box-shadow .3s; }
+.memory-card:nth-child(even) { top: var(--stagger); }
+.memory-card:hover { transform: translateY(-4px); box-shadow: 0 30px 62px #b4658133, 0 4px 12px #b4658112, inset 1px 1px 2px #fff, inset -1px -2px 4px #ffffff77; }
+.memory-frame { position: relative; aspect-ratio: 9 / 10; overflow: hidden; border-radius: 30px; background: #dccfda; box-shadow: inset 0 0 0 1px #ffffff55; cursor: zoom-in; }
+.memory-frame img { width: 100%; height: 100%; object-fit: contain; }
+.memory-frame img.is-placeholder { object-fit: cover; }
+.memory-badge { position: absolute; left: 18px; bottom: 18px; display: inline-flex; align-items: center; gap: 10px; height: 56px; padding: 0 24px; border: 1px solid #ffffffa6; border-radius: 999px; color: #4d3a46; background: linear-gradient(100deg, #ebe4e8e0, #b8adb6c9); box-shadow: inset 1px 1px 2px #ffffffb3, inset -1px -2px 3px #ffffff30, 0 6px 16px #3f2a3626; -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); font: 600 12px/1 var(--sans); letter-spacing: .14em; white-space: nowrap; pointer-events: none; }
+.memory-card:nth-child(even) .memory-badge { background: linear-gradient(100deg, #f6e2e6e0, #f3849bcc); }
+.memory-badge svg { width: 14px; height: 14px; fill: currentColor; opacity: .65; }
+.memory-expand { position: absolute; right: 18px; bottom: 18px; width: 56px; height: 56px; display: grid; place-items: center; padding: 0; border: 1px solid #ffffffa6; border-radius: 50%; color: #4d3a46; background: linear-gradient(135deg, #f1eaedd9, #c9bec8c4); box-shadow: inset 1px 1px 2px #ffffffb3, 0 6px 16px #3f2a3626; -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); transition: transform .2s; }
+.memory-expand:hover { transform: scale(1.07); }
+.memory-expand svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.memory-foot { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 8px 22px 22px; }
+.memory-foot p { margin: 0; color: #7d5b67; font: italic 400 23px/1.25 "Cormorant Garamond", "Cormorant", var(--serif); }
+.memory-like { flex: none; width: 56px; height: 56px; display: grid; place-items: center; padding: 0; border: 1px solid #ffffffb0; border-radius: 50%; color: #c0627f; background: #fdf0f3; box-shadow: 0 4px 12px #b465811c, inset 0 1px 1px #fff; transition: transform .2s, background .2s; }
+.memory-like:hover { background: #fff7f9; }
+.memory-like:active { transform: scale(.9); }
+.memory-like svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round; transition: fill .2s; }
+.memory-like[aria-pressed="true"] svg { fill: #d9577f; stroke: #d9577f; }
+.memory-expand:focus-visible, .memory-like:focus-visible { outline-offset: 2px; }
+@media (max-width: 900px) {
+  .memory-grid { --stagger: 40px; gap: 28px 24px; }.memory-card { padding: 12px 12px 0; border-radius: 34px; }.memory-frame { border-radius: 24px; }
+  .memory-badge { left: 12px; bottom: 12px; height: 46px; padding: 0 18px; font-size: 10px; gap: 8px; }.memory-expand { right: 12px; bottom: 12px; width: 46px; height: 46px; }.memory-expand svg { width: 19px; height: 19px; }
+  .memory-foot { padding: 18px 4px 18px 16px; }.memory-foot p { font-size: 19px; }.memory-like { width: 48px; height: 48px; }.memory-like svg { width: 21px; height: 21px; }
+}
+@media (max-width: 650px) {
+  .memory-grid { --stagger: 0px; grid-template-columns: minmax(0, 1fr); gap: 22px; max-width: 460px; }.memory-card { border-radius: 32px; padding: 10px 10px 0; }.memory-foot p { font-size: 21px; }
+}
+@media (max-width: 350px) { .memory-badge { padding: 0 13px; font-size: 9px; letter-spacing: .1em; }.memory-foot p { font-size: 18px; } }
+
+/* The supplied flower illustration and cat photo are preserved unchanged. */
+.closing-section { background: #271f34; }.closing-photo.is-placeholder { opacity: 0; }.closing-shade { background: linear-gradient(0deg, #24192eed, #342837d9 65%, #352732d9); }
+.closing-content { width: min(100%, 800px); }.flower-question { margin: 37px auto 0; padding: 27px 20px 29px; max-width: 480px; border-top: 1px solid #e9bfce38; border-bottom: 1px solid #e9bfce38; }.flower-question > .handwritten { color: #e0aec0; font-size: 22px; }.flower-question h3 { font-size: 27px; font-style: italic; margin: 16px 0 25px; color: #fff2e4; }.flower-choices { display: flex; gap: 14px; justify-content: center; }
+.flower-choices button { min-width: 121px; min-height: 48px; font-size: 14px; }.flower-yes { color: #4e2d49; border: 1px solid #fbe9ef; background: linear-gradient(135deg, #f3d4e0, #d69ab4); }.flower-no { padding: 12px 24px; border: 1px solid #ecdbe166; border-radius: 50px; background: #ffffff09; color: #f4e3eb; }.flower-no:hover { background: #ffffff18; }.flower-choices button[aria-pressed="true"] { outline: 2px solid #f2d0df; outline-offset: 4px; }
+.gift-result { max-width: 510px; margin: 38px auto 0; }.flower-result, .cat-result { animation: giftReveal .9s cubic-bezier(.2, .7, .3, 1) both; }.bouquet-frame { position: relative; border-radius: 230px 230px 18px 18px; overflow: hidden; box-shadow: 0 25px 65px #140d2690; background: #b5a1c1; }.digital-bouquet { width: 100%; height: auto; transform-origin: 50% 90%; animation: bouquetArrive 1.5s ease both; }.bouquet-sparkles { position: absolute; inset: 0; pointer-events: none; color: #fff2c8; }.bouquet-sparkles i { position: absolute; font-style: normal; font-size: 20px; text-shadow: 0 0 10px #ffe9bb; animation: giftTwinkle 3s ease-in-out infinite; }.bouquet-sparkles i:nth-child(1) { top: 25%; left: 15%; }.bouquet-sparkles i:nth-child(2) { top: 35%; right: 10%; animation-delay: -.8s; font-size: 13px; }.bouquet-sparkles i:nth-child(3) { top: 9%; left: 50%; animation-delay: -1.4s; }.bouquet-sparkles i:nth-child(4) { bottom: 32%; left: 8%; animation-delay: -2s; font-size: 12px; }.bouquet-sparkles i:nth-child(5) { bottom: 19%; right: 18%; animation-delay: -2.4s; }.bouquet-sparkles i:nth-child(6) { top: 50%; right: 18%; animation-delay: -.4s; font-size: 10px; }
+.flower-result > figcaption { padding-top: 25px; }.flower-result > figcaption > span { display: block; }.flower-result .handwritten { color: #ecc5d5; font-size: 27px; }.flower-result > figcaption > span:last-child { color: #cab7c6; font-size: 11px; line-height: 1.8; margin-top: 8px; }
+.cat-result { padding: 12px 6px; }.cat-polaroid { position: relative; padding: 12px 12px 21px; background: #fcf7ed; border: 1px solid #fff; box-shadow: 0 22px 50px #160e2555; transform: rotate(-3deg); }.cat-polaroid img { width: 100%; height: auto; }.cat-polaroid figcaption { color: #926b76; margin: 20px 5px 0; font-size: 26px; }.cat-polaroid .washi-tape { background-color: #dcb4c59c; top: -13px; }
+@keyframes giftReveal { from { opacity: 0; transform: translateY(24px) scale(.95); } to { opacity: 1; transform: none; } }
+@keyframes bouquetArrive { from { clip-path: inset(100% 0 0); transform: scale(.92); } to { clip-path: inset(0); transform: scale(1); } }
+@keyframes giftTwinkle { 0%, 100% { opacity: .2; transform: scale(.75); } 50% { opacity: .95; transform: scale(1.15); } }
+
+@media (max-width: 650px) {
+  .glass-scene .orb-rose { width: 94vw; top: 10%; left: -18%; }.glass-scene .orb-pearl { width: 90vw; right: -20%; bottom: 0; }.glass-scene .orb-lilac { width: 56vw; top: -5%; right: -6%; }.glass-ribbon { width: 190vw; bottom: 15%; left: -75%; }.glass-heart.heart-one { left: -8%; font-size: 150px; }.glass-heart.heart-two { right: 1%; top: 12%; font-size: 100px; }
+  .gate-card { padding: 33px 27px 29px; border-radius: 30px; max-width: 390px; }.gate-card::before { border-radius: 25px; }.gate-card h1 { font-size: 45px; }.gate-seal { margin-bottom: 21px; }
+  .scrapbook-section { padding-inline: 12px; }.scrapbook-section .section-heading { margin-bottom: 34px; }
+  .closing-section { padding: 78px 20px; }.flower-question { padding: 26px 5px; }.flower-question h3 { font-size: 26px; }.flower-question > .handwritten { font-size: 21px; }.gift-result { margin-top: 34px; }.flower-result .handwritten { font-size: 24px; }.cat-polaroid { padding: 8px 8px 17px; }.cat-polaroid figcaption { font-size: 22px; margin-top: 16px; }
+}
+@media (max-width: 350px) {
+  .gate-card { padding-inline: 22px; }
+}
+@media (max-height: 570px) { .gate-card { padding-block: 20px; }.gate-card h1 { font-size: 34px; }.gate-seal { width: 45px; height: 45px; margin-bottom: 12px; }.gate-copy { margin-bottom: 18px; }.gate-message { margin-block: 12px 0; } }
+@media (prefers-reduced-motion: reduce) { .glass-orb, .bouquet-sparkles i, .digital-bouquet, .gift-result figure { animation: none; }.memory-card, .memory-like, .memory-expand { transition: none; } }

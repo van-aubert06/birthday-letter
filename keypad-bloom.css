@@ -1,0 +1,66 @@
+/* Number pad follows the supplied layout; light catches every glass key. */
+.password-gate { background: #2b1222; }
+.glass-scene { background: radial-gradient(ellipse at 20% 25%, #78435455, transparent 57%), linear-gradient(135deg, #321725, #251126 60%, #4c2138); }
+.orb-rose { background: radial-gradient(circle at 28% 22%, #dc97b199, #933f6275 53%, #532b5144); opacity: .48; }
+.orb-lilac { background: radial-gradient(circle at 27% 23%, #b7abd096, #85609060 57%, #55365133); opacity: .45; }
+.orb-pearl { background: radial-gradient(circle at 28% 25%, #da999373, #a6627260 55%, #713b6444); opacity: .45; }
+.glass-ribbon { opacity: .12; }.glass-heart { opacity: .12; }
+.gate-card { width: min(402px, 100%); padding: 30px 28px 19px; border: 1px solid #f9ddec60; border-radius: 35px; color: #fceef4; background: radial-gradient(circle at var(--shine-x) var(--shine-y), #e3bdd91b, transparent 56%), linear-gradient(135deg, #ffffff10, #fff3f805 55%, #dc9ac010); box-shadow: 0 28px 90px #1307146b, inset 1px 1px 2px #fff8, inset -1px -1px 3px #ebbad82e; backdrop-filter: blur(27px) saturate(1.35); -webkit-backdrop-filter: blur(27px) saturate(1.35); }
+.gate-card::before { border-color: #ffffff10; }
+.gate-card .eyebrow { color: #c8a5b7; font-size: 7px; letter-spacing: .2em; }
+.gate-card h1 { color: #fff0f5; font-size: 28px; margin: 11px 0 0; line-height: 1.2; }
+.gate-card h1 em { color: #e5b7cf; white-space: nowrap; }
+.pin-display { min-height: 64px; display: grid; place-items: center; padding: 20px 0 17px; }
+.pin-dots { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; max-width: 100%; }
+.pin-dots span { display: block; width: 13px; height: 13px; flex: 0 0 13px; border: 1px solid #b77c9859; border-radius: 50%; background: #1c0e2115; box-shadow: inset 0 1px 3px #16091724; transition: background .15s, border-color .15s, box-shadow .15s; }
+.pin-dots span.is-filled { background: #efbfd6; border-color: #f5d8e8; box-shadow: 0 0 11px #f4bbd14a, inset 0 1px 2px white; }
+.pin-keypad { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); justify-items: center; gap: 17px 25px; width: 100%; margin: 6px auto 0; }
+.pin-key { --key-size: 78px; display: grid; place-items: center; width: min(var(--key-size), 100%); aspect-ratio: 1; border: 1px solid #f7d8eb13; border-radius: 50%; color: #fff0f6; font-family: var(--sans); font-weight: 500; font-size: 29px; padding: 0; background: radial-gradient(circle at 28% 15%, #ffffff09, transparent 65%), linear-gradient(140deg, #ffffff08, #fbd1e906); box-shadow: inset 1px 1px 2px #f1d1e51a, inset -1px -1px 3px #ffffff08, 0 4px 10px #1609140b; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transition: background .15s, box-shadow .15s, transform .12s; }
+.pin-key:hover { background: linear-gradient(140deg, #ffffff15, #ecc9e010); box-shadow: inset 1px 1px 3px #ffeff336, 0 5px 12px #19091519; }
+.pin-key:focus-visible { outline: 2px solid #edbbd1; outline-offset: 5px; }
+.pin-key:active { transform: scale(.94); background: #d8a5c01b; }
+.pin-delete { color: #d8b7c7; font-size: 28px; }
+.pin-submit { background: linear-gradient(145deg, #74c2f2db, #35a1e4f5); border-color: #a8daf29e; box-shadow: inset 0 2px 2px #e8faff9e, 0 6px 22px #1e67a433; color: white; }
+.pin-submit:hover { background: linear-gradient(145deg, #8bd0f8ed, #41a9efff); }
+.pin-submit svg { width: 25px; height: 25px; fill: none; stroke: currentColor; stroke-width: 2.3; stroke-linecap: round; stroke-linejoin: round; }
+.pin-hint { color: #c89fb4; margin: 30px 0 0; font-size: 13px; line-height: 1.6; }
+.gate-message { color: #dbbfd0; min-height: 18px; margin: 9px 0 0; font-size: 10px; line-height: 1.6; }
+.gate-message.is-error { color: #ffc7d5; }.pin-error .pin-dots span { border-color: #dc7495; }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { .gate-card { background: #3a1d31f5; } }
+
+/* Animated SVG bouquet: independent wrapping, stems, leaves, and petals. */
+.gift-result { max-width: 620px; }
+.bloom-scene { position: relative; width: 100%; aspect-ratio: 620 / 745; overflow: hidden; border-radius: 49% 49% 20px 20px / 34% 34% 20px 20px; background: radial-gradient(ellipse at 50% 36%, #45324b, #251e33 60%, #1d1a2c); box-shadow: 0 26px 75px #170e2766, inset 0 0 0 1px #e9c6ee0b; isolation: isolate; }
+.bloom-mount, .flower-dust { position: absolute; inset: 0; width: 100%; height: 100%; }
+.bloom-mount svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.flower-dust { pointer-events: none; z-index: 2; }
+.flower-result { animation: giftReveal .7s ease both; }
+.fl-grow, .fl-paper, .fl-ribbon, .fl-head { transform: scale(0); opacity: 0; transform-box: view-box; }
+.fl-grow, .fl-head { transform-origin: 0 0; }.fl-paper, .fl-ribbon { transform-origin: 310px 595px; }
+.fl-stem { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.fl-petal { transform-origin: 0 0; transform-box: view-box; }
+.is-growing .fl-paper { animation: paperUnfold 1.15s cubic-bezier(.2, .8, .2, 1) both; }
+.is-growing .fl-ribbon { animation: ribbonOpen 1s cubic-bezier(.2, .8, .2, 1) .45s both; }
+.is-growing .fl-stem { animation: stemExtend 1.75s cubic-bezier(.35, .05, .25, 1) var(--delay, .55s) both; }
+.is-growing .fl-grow { animation: leafOpen 1.15s cubic-bezier(.25, .8, .3, 1.1) var(--delay, 1s) both; }
+.is-growing .fl-head { animation: blossomOpen 1.9s cubic-bezier(.2, .7, .2, 1) var(--delay, 2s) both; }
+.is-growing .fl-petal { animation: petalOpen 1.7s ease-out calc(var(--delay, 2s) + var(--petal-delay, 0s)) both; }
+.is-growing .fl-starlight { animation: starBreathe var(--duration, 3s) ease-in-out var(--twinkle-delay, 0s) infinite; }
+.is-growing .fl-sway { transform-origin: 310px 595px; animation: bouquetSway 7s ease-in-out 5.7s infinite; }
+.bloom-scene.is-paused *, .bloom-scene.is-paused *::before { animation-play-state: paused !important; }
+.bloom-replay { color: #ddbacd; border-color: #ddbacd44; margin: 14px auto 0; font-size: 11px; }
+@keyframes paperUnfold { from { opacity: 0; transform: translateY(40px) scale(.3, .03); } 45% { opacity: 1; } to { opacity: 1; transform: none; } }
+@keyframes ribbonOpen { from { opacity: 0; transform: scale(.1, .35); } to { opacity: 1; transform: none; } }
+@keyframes stemExtend { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes leafOpen { from { opacity: 0; transform: scale(.02) rotate(-15deg); } 25% { opacity: 1; } to { opacity: 1; transform: scale(1); } }
+@keyframes blossomOpen { from { opacity: 0; transform: scale(.025) rotate(-9deg); } 20% { opacity: 1; } 78% { transform: scale(1.025) rotate(1deg); } to { opacity: 1; transform: none; } }
+@keyframes petalOpen { from { transform: scale(.42, .15); } to { transform: scale(1); } }
+@keyframes starBreathe { 0%, 100% { opacity: .25; } 50% { opacity: 1; } }
+@keyframes bouquetSway { 0%, 100% { transform: rotate(-.65deg); } 50% { transform: rotate(.65deg); } }
+@media (max-width: 650px) {
+  .gate-card { padding: 26px 26px 17px; max-width: 385px; }.gate-card h1 { font-size: 26px; }.pin-keypad { gap: 16px 20px; }.pin-key { --key-size: 77px; }.pin-hint { font-size: 12px; margin-top: 28px; }.pin-dots { gap: 14px; }
+  .gift-result { max-width: 510px; }.bloom-scene { border-radius: 49% 49% 15px 15px / 34% 34% 15px 15px; }
+}
+@media (max-width: 350px) { .gate-card { padding-inline: 21px; }.gate-card h1 { font-size: 23px; }.pin-keypad { gap: 14px 14px; }.pin-key { --key-size: 68px; font-size: 27px; }.pin-dots { gap: 12px; }.pin-hint { font-size: 11px; } }
+@media (max-height: 680px) { .password-gate { padding-block: 14px; }.gate-card { padding-block: 18px 11px; }.gate-card h1 { font-size: 23px; margin-top: 7px; }.pin-display { min-height: 47px; padding-block: 13px; }.pin-keypad { gap: 11px 25px; }.pin-key { --key-size: 68px; }.pin-hint { margin-top: 21px; }.gate-message { margin-top: 6px; } }
+@media (prefers-reduced-motion: reduce) { .is-growing .fl-grow, .is-growing .fl-paper, .is-growing .fl-ribbon, .is-growing .fl-head { opacity: 1; transform: none; }.is-growing .fl-stem { stroke-dashoffset: 0; }.is-growing .fl-petal { transform: none; }.is-growing .fl-starlight { opacity: .75; } }
