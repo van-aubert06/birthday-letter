@@ -17,9 +17,9 @@ window.BIRTHDAY = {
   heroMessage: "Hari ini, usia Naila udah bertambah satu tahun. Dan aku? Aku bersyukur bisa menjadi bagian kecil dari cerita perjalanan hidup Naila yang panjang.",
   letter: [
     "Selamat ulang tahun yang ke-23, yaa Naii. Sebelum hari ini berlalu begitu aja, aku ingin Naila tau satu hal, kehadiran Naila dihidup aku sebagai teman dekat aku, berarti begitu banyak buat aku.",
-    "Aku suka cara Naila menjadi diri sendiri, you are gorgeous the way you are. Cara Naila tertawa, bercerita, dan menemukan alasan untuk tetap melangkah, bahkan ketika hari Naila tidak mudah. Naila tak harus selalu kuat di depan aku. Kalau Naila capek, sandarkan kepala Naila di bahu aku sebentar.",
+    "Aku suka cara Naila menjadi diri sendiri, you are gorgeous the way you are. Cara Naila tertawa, bercerita, dan menemukan alasan untuk tetap melangkah, bahkan ketika hari Naila tidak mudah. Naila tak harus selalu tampil kuat, curahkan segalanya ke orang yang Naila percayai.",
     "Di usia yang baru ini, semoga Naila diberi kesehatan, hati yang tenang, dan keberanian untuk mengejar apa yang selalu Naila inginkan. Semoga Naila dikelilingi orang-orang yang baik, dan semoga Naila semakin menyayangi diri Naila sendiri.",
-    "Hari ini milik Naila. Buat satu permohonan, nikmati potongan kuenya, dan terima kasih sudah menjadi wanita yang dewasa, menjadi anak yang baik, kakak yang penyayang, anak yang berbakti dan teman yang peduli"
+    "Hari ini milik Naila. Buat satu permohonan, nikmati potongan kuenya, dan terima kasih sudah menjadi wanita yang dewasa, menjadi anak yang baik, kakak yang penyayang, anak yang berbakti dan teman yang peduli."
   ],
   wishes: [
     { label: "Stay Healthy", title: "Untuk tubuh yang sehat", message: "Semoga Naila selalu diberi kesehatan dan cukup waktu untuk beristirahat. Semoga tubuh Naila kuat buat menemani langkah Naila menggapai hal yang Naila cita citakan.", symbol: "✿" },
